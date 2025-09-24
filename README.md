@@ -28,12 +28,14 @@ pip install configparser
 
 ### 2. 文件准备
 将项目文件下载到本地目录：
+```bash
 jiraboardbot/
 ├── jira_issues_fetcher.py  # 获取jira issues 数据
 ├── dingtalk_bot.py         # 钉钉机器人模块
 ├── settings.cfg            # 配置管理文件
 ├── run.py                  # 启动脚本
 └── requirements.txt        # 需手动安装的依赖模块
+```
 
 ### 3. 配置修改
 编辑 settings.cfg 文件，根据您的环境修改以下配置：
