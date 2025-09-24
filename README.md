@@ -11,6 +11,7 @@ JiraDingtalkBot 是一个自动化工具，用于从JIRA看板获取Issue统计�
 - ⚙️ 配置文件化管理各项参数
 - 📁 支持多种输出格式（CSV、JSON、Markdown）
 
+
 ## 环境要求
 - Python 3.6+
 - 访问 JIRA 服务器的权限
@@ -24,78 +25,49 @@ pip install -r requirements.txt
 ```
 
 ### 2. 文件准备
-将项目文件下载到本地目录：
-```bash
-jiraboardbot/
+jira-board-bot/
 ├── jira_issues_fetcher.py  # 获取jira issues 数据
 ├── dingtalk_bot.py         # 钉钉机器人模块
 ├── settings.cfg            # 配置管理文件
 ├── run.py                  # 启动脚本
 └── requirements.txt        # 需手动安装的依赖模块
-```
 
 ### 3. 配置修改
-编辑 settings.cfg 文件，根据您的环境修改以下配置：
-```bash
-[PROJECT]
-project_name = 您的项目名称
-
-[ROBOT]
-access_token = 您的钉钉机器人access_token
-secret = 您的钉钉机器人secret
-is_at_all = False
-
-[JIRA]
-jira_url = 您的JIRA服务器地址
-username = 您的JIRA用户名
-password = 您的JIRA密码
-board_id = 您的看板ID
-issue_type = Bug
-```
-
-## 使用方法
-### 基本运行
-```bash
-python run.py
-```
-
-### 直接使用 JIRA 模块
-```bash
-python get_jira_issues.py
-```
-
-### 直接发送钉钉消息
-```bash
-python send_robot_group_message.py --access_token YOUR_TOKEN --secret YOUR_SECRET --msg "测试消息"
-```
-
-## 配置说明
-### JIRA 配置段
+编辑 settings.cfg 文件，根据自身环境修改配置：
+#### JIRA 配置段
 - jira_url: JIRA REST API 地址
 - username/password: JIRA 登录凭据
 - board_id: 要统计的看板 ID（留空可查看所有看板列表）
 - issue_type: Issue 类型筛选（All/Bug）
 
-### 机器人配置段
+#### 机器人配置段
 - access_token: 钉钉机器人 Webhook 的 access_token
 - secret: 机器人安全设置的加签密钥
 - is_at_all: 是否@所有人
 
-### 输出配置段
+#### 输出配置段
 - output_path: 报告文件保存路径
 - save_detailed_data: 是否保存详细数据
 - save_csv/save_json: 输出格式选择
 
-### 日志配置段
+#### 日志配置段
 - log_level: 日志级别（DEBUG/INFO/WARNING/ERROR/CRITICAL）
 - log_output_mode: 输出方式（CONSOLE_ONLY/FILE）
 - log_path: 日志文件路径
 
-### 输出文件
+#### 输出文件
 程序运行后会生成以下文件：
 - jira_issue_report_项目名_时间戳.md - Markdown 格式统计报告
 - jira_issues_项目名_时间戳.csv - CSV 格式详细数据（可选）
 - jira_issues_项目名_时间戳.json - JSON 格式详细数据（可选）
+
+
+## 使用方法
+### 运行
+在根目录下运行指令：
+```bash
+python run.py
+```
 
 ## 钉钉消息格式
 发送的消息包含以下信息：
@@ -126,11 +98,7 @@ python send_robot_group_message.py --access_token YOUR_TOKEN --secret YOUR_SECRE
 
 ## 许可证
 本项目采用 **GNU General Public License v3.0**。
-
 Copyright (C) 2025
-
 这是一个自由软件：您可以自由地重新分发和修改它，遵循 GNU 通用公共许可证的条款。
-
 **重要提示**: 由于本项目使用 GPL 许可证，任何基于本项目的修改或衍生作品也必须以 GPLv3 发布。
-
 完整许可证文本请参阅 [LICENSE](LICENSE) 文件。
