@@ -1,7 +1,7 @@
-# JiraBoardBot
+# JiraDingtalkBot
 
 ## 简介
-JiraBoardBot 是一个自动化工具，用于从JIRA看板获取Issue统计信息，并通过钉钉机器人发送统计报告。支持按类型筛选 Issue、按状态和经办人统计，并生成格式化的 Markdown 报告。
+JiraDingtalkBot 是一个自动化工具，用于从JIRA看板获取Issue统计信息，并通过钉钉机器人发送统计报告。支持按类型筛选 Issue、按状态和经办人统计，并生成格式化的 Markdown 报告。
 
 ## 功能特性
 - 🔍 自动获取 JIRA 看板 Issue 数据
@@ -19,11 +19,8 @@ JiraBoardBot 是一个自动化工具，用于从JIRA看板获取Issue统计信�
 ## 安装步骤
 ### 1. 手动安装依赖
 ```bash
-# 安装 requests 库
-pip install requests
-
-# 安装 configparser（Python 3.x 通常已内置，如需安装）
-pip install configparser
+# 安装依赖库
+pip install -r requirements.txt
 ```
 
 ### 2. 文件准备
@@ -40,7 +37,6 @@ jiraboardbot/
 ### 3. 配置修改
 编辑 settings.cfg 文件，根据您的环境修改以下配置：
 ```bash
-ini
 [PROJECT]
 project_name = 您的项目名称
 
