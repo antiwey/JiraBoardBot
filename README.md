@@ -11,14 +11,6 @@ JiraBoardBot 是一个自动化工具，用于从JIRA看板获取Issue统计信�
 - ⚙️ 配置文件化管理各项参数
 - 📁 支持多种输出格式（CSV、JSON、Markdown）
 
-## 项目结构
-jira-board-bot/
-├── jira_issues_fetcher.py  # 获取jira issues 数据
-├── dingtalk_bot.py         # 钉钉机器人模块
-├── settings.cfg            # 配置管理文件
-├── run.py                  # 启动脚本
-└── requirements.txt        # 需手动安装的依赖模块
-
 ## 环境要求
 - Python 3.6+
 - 访问 JIRA 服务器的权限
@@ -36,10 +28,12 @@ pip install configparser
 
 ### 2. 文件准备
 将项目文件下载到本地目录：
-- run.py - 主运行脚本
-- get_jira_issues.py - JIRA 数据获取模块
-- send_robot_group_message.py - 钉钉消息发送模块
-- settings.cfg - 配置文件
+jiraboardbot/
+├── jira_issues_fetcher.py  # 获取jira issues 数据
+├── dingtalk_bot.py         # 钉钉机器人模块
+├── settings.cfg            # 配置管理文件
+├── run.py                  # 启动脚本
+└── requirements.txt        # 需手动安装的依赖模块
 
 ### 3. 配置修改
 编辑 settings.cfg 文件，根据您的环境修改以下配置：
