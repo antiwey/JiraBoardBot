@@ -37,37 +37,35 @@ jira-board-bot/
 ### 3. 配置修改
 编辑 settings.cfg 文件，根据自身环境修改配置：
 ```bash
-#### JIRA 配置段
-- jira_url: JIRA REST API 地址
-- username/password: JIRA 登录凭据
-- board_id: 要统计的看板 ID（留空可查看所有看板列表）
-- issue_type: Issue 类型筛选（All/Bug）
+# JIRA 配置段
+[PROJECT]
+jira_url: JIRA REST API 地址
+username/password: JIRA 登录凭据
+board_id: 要统计的看板 ID（留空可查看所有看板列表）
+issue_type: Issue 类型筛选（All/Bug）
 
-#### 机器人配置段
-- access_token: 钉钉机器人 Webhook 的 access_token
-- secret: 机器人安全设置的加签密钥
-- is_at_all: 是否@所有人
+# 机器人配置段
+[ROBOT]
+access_token: 钉钉机器人 Webhook 的 access_token
+secret: 机器人安全设置的加签密钥
+is_at_all: 是否@所有人
 
-#### 输出配置段
-- output_path: 报告文件保存路径
-- save_detailed_data: 是否保存详细数据
-- save_csv/save_json: 输出格式选择
+# 输出配置段
+[OUTPUT]
+output_path: 报告文件保存路径
+save_detailed_data: 是否保存详细数据
+save_csv/save_json: 输出格式选择
 
-#### 日志配置段
-- log_level: 日志级别（DEBUG/INFO/WARNING/ERROR/CRITICAL）
-- log_output_mode: 输出方式（CONSOLE_ONLY/FILE）
-- log_path: 日志文件路径
-
-#### 输出文件
-程序运行后会生成以下文件：
-- jira_issue_report_项目名_时间戳.md - Markdown 格式统计报告
-- jira_issues_项目名_时间戳.csv - CSV 格式详细数据（可选）
-- jira_issues_项目名_时间戳.json - JSON 格式详细数据（可选）
+# 日志配置段
+[LOG]
+log_level: 日志级别（DEBUG/INFO/WARNING/ERROR/CRITICAL）
+log_output_mode: 输出方式（CONSOLE_ONLY/FILE）
+log_path: 日志文件路径
 ```
 
 
 ## 使用方法
-### 运行
+### 基本运行
 在根目录下运行指令：
 ```bash
 python run.py
@@ -78,6 +76,12 @@ python run.py
 - BUG 总数和关闭率
 - 各状态 BUG 数量统计
 - 按经办人的详细统计
+
+## 输出文件
+程序运行后会生成以下文件：
+- jira_issue_report_项目名_时间戳.md - Markdown 格式统计报告
+- jira_issues_项目名_时间戳.csv - CSV 格式详细数据（可选）
+- jira_issues_项目名_时间戳.json - JSON 格式详细数据（可选）
 
 ## 故障排除
 ### 常见问题
