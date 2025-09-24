@@ -107,7 +107,11 @@ python run.py
 
 ## 许可证
 本项目采用 **GNU General Public License v3.0**。
+
 Copyright (C) 2025
+
 这是一个自由软件：您可以自由地重新分发和修改它，遵循 GNU 通用公共许可证的条款。
+
 **重要提示**: 由于本项目使用 GPL 许可证，任何基于本项目的修改或衍生作品也必须以 GPLv3 发布。
+
 完整许可证文本请参阅 [LICENSE](LICENSE) 文件。
