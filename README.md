@@ -25,15 +25,18 @@ pip install -r requirements.txt
 ```
 
 ### 2. 文件准备
+```bash
 jira-board-bot/
 ├── jira_issues_fetcher.py  # 获取jira issues 数据
 ├── dingtalk_bot.py         # 钉钉机器人模块
 ├── settings.cfg            # 配置管理文件
 ├── run.py                  # 启动脚本
 └── requirements.txt        # 需手动安装的依赖模块
+```
 
 ### 3. 配置修改
 编辑 settings.cfg 文件，根据自身环境修改配置：
+```bash
 #### JIRA 配置段
 - jira_url: JIRA REST API 地址
 - username/password: JIRA 登录凭据
@@ -60,6 +63,7 @@ jira-board-bot/
 - jira_issue_report_项目名_时间戳.md - Markdown 格式统计报告
 - jira_issues_项目名_时间戳.csv - CSV 格式详细数据（可选）
 - jira_issues_项目名_时间戳.json - JSON 格式详细数据（可选）
+```
 
 
 ## 使用方法
